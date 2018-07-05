@@ -1,7 +1,11 @@
 new Vue({
    el: '#app',
    data: {
-       title: 'Dynamic attr',
-       url: 'http://vuejs.org'
+       title: {
+           '1': 'DynamicAttr',
+           '2': 'add HTML'
+       },
+       url: 'http://vuejs.org',
+       myHTML: '<div><p>Hello, I m from script</p></div>'
    }
 });
