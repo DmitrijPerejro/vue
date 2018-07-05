@@ -12,9 +12,16 @@
 		<div>
 			<p>this link is <a :href="url">Vuejs</a></p>
 		</div>
+
 		<h2>{{ title[2] }}</h2>
 		<div>
 			<p v-html="myHTML"></p>
+		</div>
+
+		<h2>{{ title[3] }}</h2>
+		<div>
+			<p>counter is {{ counter }}</p>
+			<button @click="addCount" @mouseover="hover" @mouseleave="unHover">add count</button>
 		</div>
 	</div>
 	
