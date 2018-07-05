@@ -5,7 +5,8 @@ new Vue({
            '1': 'DynamicAttr',
            '2': 'add HTML',
            '3': 'Events',
-           '4': 'Params in methods'
+           '4': 'Params in methods',
+           '5': 'Modification events'
        },
        url: 'http://vuejs.org',
        myHTML: '<div><p>Hello, I m from script</p></div>',
@@ -26,12 +27,15 @@ new Vue({
        addCountWithParams(step,str,event){
            this.counterWithParamsTitle = str;
            this.counterWithParams += step
-            
+
            if (step % 2 == 0) {
                event.target.style.color = 'blue'
            } else {
                event.target.style.color = 'red'
            }
+       },
+       showAlert(){
+           alert(`I am ${this.title[5]}`)
        }
     }
 });

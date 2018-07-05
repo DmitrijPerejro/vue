@@ -25,10 +25,15 @@
 		</p>
 
 		<h2>{{ title[4] }}</h2>
-		<div>
+		<p>
 			<p>{{ counterWithParamsTitle }} is {{ counterWithParams }}</p>
 			<button @click="addCountWithParams(10,'Счетчик увеличен на 10', $event)">add count 10</button>
 			<button @click="addCountWithParams(5,'Счетчик увеличен на 5', $event)">add count 5</button>
+		</p>
+
+		<h2>{{ title[5] }}</h2>
+		<div>
+			<p>this link is <a :href="url" @click.prevent="showAlert">Vuejs</a></p>
 		</div>
 	</div>
 	
