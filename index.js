@@ -4,11 +4,13 @@ new Vue({
        title: {
            '1': 'DynamicAttr',
            '2': 'add HTML',
-           '3': 'Events'
+           '3': 'Events',
+           '4': 'Params in methods'
        },
        url: 'http://vuejs.org',
        myHTML: '<div><p>Hello, I m from script</p></div>',
-       counter: 0
+       counter: 0,
+       counterWithParams: 0
    },
     methods: {
        addCount(){
@@ -19,6 +21,9 @@ new Vue({
        },
        unHover(event) {
            event.target.style.outline = ''
+       },
+       addCountWithParams(step){
+           this.counterWithParams += step
        }
     }
 });

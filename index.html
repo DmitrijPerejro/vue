@@ -19,9 +19,15 @@
 		</div>
 
 		<h2>{{ title[3] }}</h2>
-		<div>
+		<p>
 			<p>counter is {{ counter }}</p>
 			<button @click="addCount" @mouseover="hover" @mouseleave="unHover">add count</button>
+		</p>
+
+		<h2>{{ title[4] }}</h2>
+		<div>
+			<p>counter with params is {{ counterWithParams }}</p>
+			<button @click="addCountWithParams(10)">add count 10</button>
 		</div>
 	</div>
 	
