@@ -10,7 +10,8 @@ new Vue({
        url: 'http://vuejs.org',
        myHTML: '<div><p>Hello, I m from script</p></div>',
        counter: 0,
-       counterWithParams: 0
+       counterWithParams: 0,
+       counterWithParamsTitle: ''
    },
     methods: {
        addCount(){
@@ -22,8 +23,15 @@ new Vue({
        unHover(event) {
            event.target.style.outline = ''
        },
-       addCountWithParams(step){
+       addCountWithParams(step,str,event){
+           this.counterWithParamsTitle = str;
            this.counterWithParams += step
+            
+           if (step % 2 == 0) {
+               event.target.style.color = 'blue'
+           } else {
+               event.target.style.color = 'red'
+           }
        }
     }
 });

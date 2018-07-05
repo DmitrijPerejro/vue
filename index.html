@@ -26,8 +26,9 @@
 
 		<h2>{{ title[4] }}</h2>
 		<div>
-			<p>counter with params is {{ counterWithParams }}</p>
-			<button @click="addCountWithParams(10)">add count 10</button>
+			<p>{{ counterWithParamsTitle }} is {{ counterWithParams }}</p>
+			<button @click="addCountWithParams(10,'Счетчик увеличен на 10', $event)">add count 10</button>
+			<button @click="addCountWithParams(5,'Счетчик увеличен на 5', $event)">add count 5</button>
 		</div>
 	</div>
 	
