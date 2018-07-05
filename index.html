@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>vue-project</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script src="/dist/build.js"></script>
-  </body>
+<head>
+	<meta charset="UTF-8">
+	<title>Vue</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 offset-md-3">
+					<form>
+						<div class="form-group">
+						  <label for="name">Ваше имя</label>
+						  <input type="text" class="form-control" id="name" placeholder="Имя" v-model='name'>
+						</div>
+						<div class="form-group">
+							<label for="surname">Ваша фамилия</label>
+							<input type="text" class="form-control" id="surname" placeholder="Фамиля" v-model='surname'>
+						</div>
+						<div class="form-group">
+						  <label for="chidlren">Количество детей</label>
+						  <select multiple class="form-control" id="chidlren">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						  </select>
+						</div>
+						<button class="btn btn-info" @click.prevent='submit(name,surname)'>Сохранить</button>
+					  </form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+	<script src="index.js"></script>
+</body>
 </html>
