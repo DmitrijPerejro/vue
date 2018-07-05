@@ -6,13 +6,16 @@ new Vue({
            '2': 'add HTML',
            '3': 'Events',
            '4': 'Params in methods',
-           '5': 'Modification events'
+           '5': 'Modification events',
+           '6': 'Modification events board',
+           '7': 'v-model'
        },
        url: 'http://vuejs.org',
        myHTML: '<div><p>Hello, I m from script</p></div>',
        counter: 0,
        counterWithParams: 0,
-       counterWithParamsTitle: ''
+       counterWithParamsTitle: '',
+       formValue: ''
    },
     methods: {
        addCount(){
@@ -26,7 +29,7 @@ new Vue({
        },
        addCountWithParams(step,str,event){
            this.counterWithParamsTitle = str;
-           this.counterWithParams += step
+           this.counterWithParams += step;
 
            if (step % 2 == 0) {
                event.target.style.color = 'blue'
@@ -36,6 +39,9 @@ new Vue({
        },
        showAlert(){
            alert(`I am ${this.title[5]}`)
-       }
+       },
+        showAlertBoard(event){
+           alert(event.target.value)
+        }
     }
 });

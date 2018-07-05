@@ -35,6 +35,21 @@
 		<div>
 			<p>this link is <a :href="url" @click.prevent="showAlert">Vuejs</a></p>
 		</div>
+
+		<h2>{{ title[6] }}</h2>
+		<div>
+			<p><input type="text" @keyup.enter="showAlertBoard"></p>
+		</div>
+
+		<h2>{{ title[7] }}</h2>
+		<div>
+			<p> Form Value is {{ formValue }} <br>
+				<input type="text" v-model="formValue">
+			</p>
+			<p>(With lazy) Form Value is {{ formValue }} <br>
+				<input type="text" v-model.lazy="formValue">
+			</p>
+		</div>
 	</div>
 	
 	<script src="index.js"></script>
