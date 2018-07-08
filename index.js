@@ -10,7 +10,8 @@ new Vue({
            '6': 'Modification events board',
            '7': 'v-model',
            '8': 'css class',
-           '9': 'inline style'
+           '9': 'inline style',
+           '10': 'v-if v-else-if v-else'
        },
        url: 'http://vuejs.org',
        myHTML: '<div><p>Hello, I m from script</p></div>',
@@ -20,7 +21,9 @@ new Vue({
        formValue: '',
        isActive: true,
        color: 'blue',
-       height: 150
+       height: 150,
+       isVisible: true,
+       skills: 'PHP'
    },
     methods: {
        addCount(){

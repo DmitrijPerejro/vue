@@ -7,10 +7,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 	<style>
 
-		div.alert {
-			min-height: 25vh;
-		}
-
 		h2.alert {
 			position: sticky;
 			top:0;
@@ -121,6 +117,32 @@
 						<hr>
 						<input type="text" v-model='color'>
 						<input type="text" v-model='height'>
+					</div>
+				</div>
+				<div class="alert alert-success">
+					<h2 class="alert alert-primary">{{ title[10] }}</h2>
+					<button class="btn btn-danger" @click='isVisible = !isVisible'>toggle visible</button>
+					<div>
+						<template v-if='isVisible'>
+							<p>Hello, i m visible</p>
+						</template>
+                        <template v-if='!isVisible'>
+								<p>Hello, i m not visible</p>
+						</template>	
+					</div>
+					<div class="alert alert-warning">
+						<p v-if='skills == "JavaScript"'>
+							JS
+						</p>
+						<p v-else-if='skills == "PHP"'>
+							PHP
+						</p>
+						<p v-else-if='skills == "HTML"'>
+							HTML
+						</p>
+						<p v-else>
+							not match
+						</p>
 					</div>
 				</div>
 			</div>
