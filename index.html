@@ -143,8 +143,23 @@
 						<p v-else>
 							not match
 						</p>
+						<hr>
+						<input type="text" v-model='skills'>
 					</div>
 				</div>
+				<div class="alert alert-success">
+						<h2 class="alert alert-primary">{{ title[11] }}</h2>
+						<div>
+							<template v-show='isShow'>
+								<p>Hello, i m show</p>
+							</template>
+							<template v-show='!isShow'>
+								<p>Hello, i m not show</p>
+							</template>	
+						</div>
+						<hr>
+						<button class="btn btn-danger" @click='isShow = !isShow'>toggle show</button>
+					</div>
 			</div>
 		</div>
 	</div>

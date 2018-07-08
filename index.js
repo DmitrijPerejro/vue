@@ -11,7 +11,8 @@ new Vue({
            '7': 'v-model',
            '8': 'css class',
            '9': 'inline style',
-           '10': 'v-if v-else-if v-else'
+           '10': 'v-if v-else-if v-else',
+           '11': 'v-show == display:none'
        },
        url: 'http://vuejs.org',
        myHTML: '<div><p>Hello, I m from script</p></div>',
@@ -23,7 +24,8 @@ new Vue({
        color: 'blue',
        height: 150,
        isVisible: true,
-       skills: 'PHP'
+       skills: '',
+       isShow: true
    },
     methods: {
        addCount(){
