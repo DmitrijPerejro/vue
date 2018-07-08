@@ -5,50 +5,99 @@
 	<title>Vue</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<style>
+
+		div.alert {
+			min-height: 25vh;
+		}
+
+		h2.alert {
+			position: sticky;
+			top:0;
+		}
+
+		#app {
+			width:100%;
+		}
+
+		.red {
+			border:2o solid red;
+		}
+	</style>
 </head>
 <body>
-	<div id="app">
-		<h2>{{ title[1] }}</h2>
-		<div>
-			<p>this link is <a :href="url">Vuejs</a></p>
-		</div>
-
-		<h2>{{ title[2] }}</h2>
-		<div>
-			<p v-html="myHTML"></p>
-		</div>
-
-		<h2>{{ title[3] }}</h2>
-		<p>
-			<p>counter is {{ counter }}</p>
-			<button @click="addCount" @mouseover="hover" @mouseleave="unHover">add count</button>
-		</p>
-
-		<h2>{{ title[4] }}</h2>
-		<p>
-			<p>{{ counterWithParamsTitle }} is {{ counterWithParams }}</p>
-			<button @click="addCountWithParams(10,'Счетчик увеличен на 10', $event)">add count 10</button>
-			<button @click="addCountWithParams(5,'Счетчик увеличен на 5', $event)">add count 5</button>
-		</p>
-
-		<h2>{{ title[5] }}</h2>
-		<div>
-			<p>this link is <a :href="url" @click.prevent="showAlert">Vuejs</a></p>
-		</div>
-
-		<h2>{{ title[6] }}</h2>
-		<div>
-			<p><input type="text" @keyup.enter="showAlertBoard"></p>
-		</div>
-
-		<h2>{{ title[7] }}</h2>
-		<div>
-			<p> Form Value is {{ formValue }} <br>
-				<input type="text" v-model="formValue">
-			</p>
-			<p>(With lazy) Form Value is {{ formValue }} <br>
-				<input type="text" v-model.lazy="formValue">
-			</p>
+	<div class="container">
+		<div class="row">
+			<div id="app">
+				<div class="alert alert-success">
+					<h2 class="alert alert-primary">{{ title[1] }}</h2>
+					<div>
+						<p>this link is <a :href="url">Vuejs</a></p>
+					</div>
+				</div>
+				<div class="alert alert-success">
+					<h2 class="alert alert-primary">{{ title[2] }}</h2>
+					<div>
+						<p v-html="myHTML"></p>
+					</div>
+				</div>
+				<div class="alert alert-success">
+					<h2 class="alert alert-primary">{{ title[3] }}</h2>
+					<p>
+						<p>counter is {{ counter }}</p>
+						<button @click="addCount" @mouseover="hover" @mouseleave="unHover">add count</button>
+					</p>
+				</div>
+				<div class="alert alert-success">
+					<h2 class="alert alert-primary">{{ title[4] }}</h2>
+					<p>
+						<p>{{ counterWithParamsTitle }} is {{ counterWithParams }}</p>
+						<button @click="addCountWithParams(10,'Счетчик увеличен на 10', $event)">add count 10</button>
+						<button @click="addCountWithParams(5,'Счетчик увеличен на 5', $event)">add count 5</button>
+					</p>
+				</div>
+				<div class="alert alert-success">
+					<h2 class="alert alert-primary">{{ title[5] }}</h2>
+					<div>
+						<p>this link is <a :href="url" @click.prevent="showAlert">Vuejs</a></p>
+					</div>
+				</div>
+				<div class="alert alert-success">
+					<h2 class="alert alert-primary">{{ title[6] }}</h2>
+					<div>
+						<p><input type="text" @keyup.enter="showAlertBoard"></p>
+					</div>
+				</div>
+				<div class="alert alert-success">
+					<h2 class="alert alert-primary">{{ title[7] }}</h2>
+					<div>
+						<p> Form Value is {{ formValue }} <br>
+							<input type="text" v-model="formValue">
+						</p>
+						<p>(With lazy) Form Value is {{ formValue }} <br>
+							<input type="text" v-model.lazy="formValue">
+						</p>
+					</div>
+				</div>
+				<div class="alert alert-success">
+					<h2 class="alert alert-primary">{{ title[8] }}</h2>
+					<div>
+                        <button class="btn"
+                                @click="isActive = !isActive"
+                                :class="{
+                                    'btn-warning': isActive,
+                                    'btn-success': !isActive
+                                }">
+                            button used obj
+						</button>
+						<button class="btn"
+                                @click="isActive = !isActive"
+                                :class="['btn-primary', {'btn-success': !isActive}]">
+                            button used array is priotitety
+                        </button>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	

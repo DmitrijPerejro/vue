@@ -8,14 +8,16 @@ new Vue({
            '4': 'Params in methods',
            '5': 'Modification events',
            '6': 'Modification events board',
-           '7': 'v-model'
+           '7': 'v-model',
+           '8': 'css class'
        },
        url: 'http://vuejs.org',
        myHTML: '<div><p>Hello, I m from script</p></div>',
        counter: 0,
        counterWithParams: 0,
        counterWithParamsTitle: '',
-       formValue: ''
+       formValue: '',
+       isActive: true
    },
     methods: {
        addCount(){
