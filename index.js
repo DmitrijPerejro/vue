@@ -9,7 +9,8 @@ new Vue({
            '5': 'Modification events',
            '6': 'Modification events board',
            '7': 'v-model',
-           '8': 'css class'
+           '8': 'css class',
+           '9': 'inline style'
        },
        url: 'http://vuejs.org',
        myHTML: '<div><p>Hello, I m from script</p></div>',
@@ -17,7 +18,9 @@ new Vue({
        counterWithParams: 0,
        counterWithParamsTitle: '',
        formValue: '',
-       isActive: true
+       isActive: true,
+       color: 'blue',
+       height: 150
    },
     methods: {
        addCount(){
@@ -44,6 +47,14 @@ new Vue({
        },
         showAlertBoard(event){
            alert(event.target.value)
+        }
+    },
+    computed: {
+        getCssClasses(){
+            return {
+                'background':this.color, 
+                'height': this.height + 'px'
+            }
         }
     }
 });
