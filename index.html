@@ -148,18 +148,72 @@
 					</div>
 				</div>
 				<div class="alert alert-success">
-						<h2 class="alert alert-primary">{{ title[11] }}</h2>
-						<div>
-							<template v-show='isShow'>
-								<p>Hello, i m show</p>
-							</template>
-							<template v-show='!isShow'>
-								<p>Hello, i m not show</p>
-							</template>	
-						</div>
-						<hr>
-						<button class="btn btn-danger" @click='isShow = !isShow'>toggle show</button>
+					<h2 class="alert alert-primary">{{ title[11] }}</h2>
+					<div>
+						
+							<p v-show='isShow'>Hello, i m show</p>
+			
+							<p v-show='!isShow'>Hello, i m not show</p>
+				
 					</div>
+					<hr>
+					<button class="btn btn-danger" @click='isShow = !isShow'>toggle show</button>
+				</div>
+				<div class="alert alert-success">
+					<h2 class="alert alert-primary">{{ title[12] }}</h2>
+					<div>
+						<ul class="list-group">
+							<li v-for="(person, index) in people" class="list-group-item">
+								<p> {{ index + 1}}</p>
+								<p> {{ person.name }}</p>
+								<p> {{ person.skills }}</p>
+							</li>
+						</ul>
+					</div>
+					<hr>
+					<ul>
+						<li v-for="(num, index) in 10">{{ index }} - {{ num }}</li>
+					</ul>
+					<div class="alert alert-primary">
+						<p v-for="(value, key, index) in perejro">{{ index + 1}} {{ key }} - {{ value }}</p>
+					</div>
+				</div>
+				<div class="alert alert-success">
+					<h2 class="alert alert-primary">{{ title[13] }}</h2>
+					<blockquote>В данной реализации, если бы resultCounter3 был записан как метод - то вызывался бы он при каждом измении программы. Когда он в computed - вызывается только тогда, когда идет обращение к полю, к которому имеет отношение computed свойство</blockquote>
+					<h2 class="alert alert-primary">{{ title[14] }}</h2>
+					<blockquote>В watch Записана функции с название той переменной , которую мы хотим отслеживать</blockquote>
+					<div>
+						<p> counter3 is {{ counter3 }}</p>
+						<p>{{ resultCounter3 }}</p>
+						<button @click="addCounter3">add</button>
+						<button @click="subCounter3">sub</button>
+					</div>
+					<hr>
+					<div>
+						<p> counter4 is {{ counter4 }}</p>
+						<button @click="addCounter4">add</button>
+						<button @click="subCounter4">sub</button>
+					</div>
+				</div>
+				<div class="alert alert-success">
+						<h2 class="alert alert-primary">{{ title[15] }}</h2>
+						<p>Мы может обращаться между двумя экземлярами Vue, занеся их в перменные</p>
+						<div id="app2">
+							<p>Этот текст выведен из vue1</p>
+							<ul>
+								<li v-for="titles in title">{{ titles }}</li>
+							</ul>
+						</div>
+				</div>
+				<div class="alert alert-success">
+						<h2 class="alert alert-primary">{{ title[16] }}</h2>
+						<h1 ref='heading'>Hello :)</h1>
+						<button @click='refsUpdate'>button :)</button>
+				</div>
+				<div class="alert alert-success">
+						<div id="app3"></div>
+				</div>
 			</div>
 		</div>
 	</div>
