@@ -6,8 +6,40 @@
   </head>
   <body>
     <div id="app">
-      1
+      <counter></counter> 
     </div>
-    <script src="/dist/build.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+
+      
+      Vue.component('counter',{
+        template: `
+          <div>
+            <h2>Counter: {{ counter }}</h2>
+            <button @click='add'>add counter</button>
+          </div>
+        `,
+        data(){
+          return {
+            counter: 0
+          }
+        },
+        methods: {
+          add(){
+            this.counter++;
+      
+          }
+        }
+      });
+
+
+      new Vue({
+        el: '#app'
+      })
+
+  
+      
+      </script>
+      
   </body>
 </html>
