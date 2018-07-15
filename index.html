@@ -2,44 +2,61 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>vue-project</title>
+    <title>Friend list</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   </head>
   <body>
     <div id="app">
-      <counter></counter> 
-    </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <form>
+              <div class="form-group">
+                <label for="name">Имя</label>
+                <input type="text" class="form-control" id="name">
+              </div>
+              <div class="form-group">
+                <label for="tel">Телефон</label>
+                <input type="tel" class="form-control" id="tel">
+              </div>
+              <div class="form-group">
+                <label for="email">Почта</label>
+                <input type="email" class="form-control" id="email">
+              </div>
+            </form>
+            <button class="btn btn-primary" @click='addFriend'>+</button>
+            <ul>
+              <li v-for='(friend, index) in count'>
+                <div class="form-group alert alert-success">
+                  <label for="f-name ">Имя</label>
+                  <input type="text" class="form-control" id="f-name" value="">
+                </div>
+              </li>
+            </ul> 
+          </div> 
+        </div>
+      </div>
+    </div>  
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
 
-      
-      Vue.component('counter',{
-        template: `
-          <div>
-            <h2>Counter: {{ counter }}</h2>
-            <button @click='add'>add counter</button>
-          </div>
-        `,
-        data(){
-          return {
-            counter: 0
-          }
-        },
-        methods: {
-          add(){
-            this.counter++;
-      
-          }
+    new Vue({
+      el: '#app',
+      data: {
+        name: 'Dima',
+        count: 0,
+        freindsList: []
+      },
+      methods:{
+        addFriend(){
+          this.count++;
         }
-      });
-
-
-      new Vue({
-        el: '#app'
-      })
-
+      }
+    })  
+     
   
       
-      </script>
+    </script>
       
   </body>
 </html>
