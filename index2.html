@@ -11,7 +11,6 @@
   <body>
     <div id="app" class="animsition">
       <div class="container">
-              <a href="index2.html" class="animsition-link">animsition link 1</a>    
         <div class="row">
           <div class="col-6"  v-if='ok'>
             <form>
@@ -92,15 +91,11 @@
       }
     })  
      
-    
-
-
-
-
+  
     $(document).ready(function() {
   $(".animsition").animsition({
-    inClass: 'fade-in',
-    outClass: 'fade-out',
+    inClass: 'rotate-in',
+    outClass: 'rotate-out',
     inDuration: 1500,
     outDuration: 800,
     linkElement: '.animsition-link',
@@ -120,7 +115,7 @@
     overlayParentElement : 'body',
     transition: function(url){ window.location.href = url; }
   });
-});  
+});
     </script>
       
   </body>
